@@ -1,6 +1,6 @@
 Name:		ocaml-glmlite
 Version:	0.03.31
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:	OpenGL interface for Objective Caml
 License:	GPL
 Group:          Development/Other
