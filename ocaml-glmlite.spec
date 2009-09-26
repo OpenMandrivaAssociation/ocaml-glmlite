@@ -1,11 +1,15 @@
 Name:		ocaml-glmlite
-Version:	0.03.31
-Release:        %mkrel 2
+Version:	0.03.33
+Release:        %mkrel 1
 Summary:	OpenGL interface for Objective Caml
 License:	GPL
 Group:          Development/Other
 URL:		http://www.linux-nantes.org/~fmonnier/OCaml/GL/
 Source0:	http://www.linux-nantes.org/~fmonnier/OCaml/GL/download/glMLite-%{version}.tgz
+Patch0:         RedBook-Samples-fix-libpath.patch
+Patch1:         glMLite-TEST-dir-libpath.patch
+Patch2:         gle-examples-makefiles.patch
+Patch3:         glMLite-LablGL-libpath.patch
 BuildRequires:	ocaml
 BuildRequires:	X11-devel
 BuildRequires:	Mesa-common-devel
@@ -30,12 +34,18 @@ There are specialised/optimised loaders for jpeg, png and svg,
 and also a generic image loader (which uses the libmagick).
 The names of the functions are the same than in the C API,
 and the problematic types are packed in modules.
+There are additional wrappers for the GLE and the FTGL
+libraries, to perform extrusions and font rendering.
 
 %description -n %{name}-devel
 Development files for the package %{name}.
 
 %prep
 %setup -q -n glMLite-%{version}
+%patch0 -p0 -b .redbook
+%patch1 -p0 -b .testdir
+%patch2 -p0 -b .gle-examples
+%patch3 -p0 -b .lablglmod
 
 %build
 make everything
@@ -63,6 +73,7 @@ rm -rf %{buildroot}
 %files devel
 %defattr(-,root,root)
 %doc SRC/doc
+%doc TEST RedBook-Samples gle-examples nehe-examples LablGL
 %{_libdir}/ocaml/glMLite/*.a
 %{_libdir}/ocaml/glMLite/*.cmx
 %{_libdir}/ocaml/glMLite/*.cmxa
