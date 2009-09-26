@@ -1,30 +1,30 @@
-Name:		ocaml-glmlite
-Version:	0.03.33
+Name:           ocaml-glmlite
+Version:        0.03.33
 Release:        %mkrel 1
-Summary:	OpenGL interface for Objective Caml
-License:	GPL
+Summary:        OpenGL interface for Objective Caml
+License:        GPL
 Group:          Development/Other
-URL:		http://www.linux-nantes.org/~fmonnier/OCaml/GL/
-Source0:	http://www.linux-nantes.org/~fmonnier/OCaml/GL/download/glMLite-%{version}.tgz
+URL:            http://www.linux-nantes.org/~fmonnier/OCaml/GL/
+Source0:        http://www.linux-nantes.org/~fmonnier/OCaml/GL/download/glMLite-%{version}.tgz
 Patch0:         RedBook-Samples-fix-libpath.patch
 Patch1:         glMLite-TEST-dir-libpath.patch
 Patch2:         gle-examples-makefiles.patch
 Patch3:         glMLite-LablGL-libpath.patch
-BuildRequires:	ocaml
-BuildRequires:	X11-devel
-BuildRequires:	Mesa-common-devel
-BuildRequires:	libjpeg-devel
-BuildRequires:	libpng-devel
-BuildRequires:	librsvg-devel
-BuildRequires:	libmagick-devel
-BuildRequires:	libgle-devel
-BuildRequires:	libftgl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRequires:  ocaml
+BuildRequires:  X11-devel
+BuildRequires:  Mesa-common-devel
+BuildRequires:  libjpeg-devel
+BuildRequires:  libpng-devel
+BuildRequires:  librsvg-devel
+BuildRequires:  libmagick-devel
+BuildRequires:  libgle-devel
+BuildRequires:  libftgl-devel
+BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %package devel
-Summary:	OpenGL bindings for OCaml
+Summary:        OpenGL bindings for OCaml
 Group:          Development/Other
-Requires:	%{name} = %{version}-%{release}
+Requires:       %{name} = %{version}-%{release}
 
 %description
 This package provides OpenGL bindings for OCaml.
