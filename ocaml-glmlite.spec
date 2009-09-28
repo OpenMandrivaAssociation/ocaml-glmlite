@@ -1,5 +1,5 @@
 Name:           ocaml-glmlite
-Version:        0.03.33
+Version:        0.03.34
 Release:        %mkrel 1
 Summary:        OpenGL interface for Objective Caml
 License:        GPL
@@ -42,10 +42,10 @@ Development files for the package %{name}.
 
 %prep
 %setup -q -n glMLite-%{version}
-%patch0 -p0 -b .redbook
-%patch1 -p0 -b .testdir
-%patch2 -p0 -b .gle-examples
-%patch3 -p0 -b .lablglmod
+%patch0 -p0
+%patch1 -p0
+%patch2 -p0
+%patch3 -p0
 
 %build
 make everything
