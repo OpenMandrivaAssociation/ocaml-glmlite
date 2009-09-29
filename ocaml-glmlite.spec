@@ -75,6 +75,7 @@ rm -rf %{buildroot}
 %doc SRC/doc
 %doc TEST RedBook-Samples gle-examples nehe-examples LablGL
 %{_libdir}/ocaml/glMLite/*.a
+%{_libdir}/ocaml/glMLite/*.o
 %{_libdir}/ocaml/glMLite/*.cmx
 %{_libdir}/ocaml/glMLite/*.cmxa
 
