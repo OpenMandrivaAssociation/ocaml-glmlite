@@ -1,5 +1,5 @@
 Name:           ocaml-glmlite
-Version:        0.03.45
+Version:        0.03.46
 Release:        %mkrel 1
 Summary:        OpenGL interface for Objective Caml
 License:        GPL
@@ -8,6 +8,7 @@ URL:            http://www.linux-nantes.org/~fmonnier/OCaml/GL/
 Source0:        http://www.linux-nantes.org/~fmonnier/OCaml/GL/download/glMLite-%{version}.tgz
 Patch0:         RedBook-Samples-fix-libpath.patch
 Patch1:         glMLite-TEST-dir-libpath.patch
+Patch4:         glMLite-TEST3-dir-libpath.patch
 Patch2:         gle-examples-makefiles.patch
 Patch3:         glMLite-LablGL-libpath.patch
 BuildRequires:  ocaml
@@ -46,6 +47,7 @@ Development files for the package %{name}.
 %patch1 -p0
 %patch2 -p0
 %patch3 -p0
+%patch4 -p0
 
 %build
 make everything
@@ -73,7 +75,7 @@ rm -rf %{buildroot}
 %files devel
 %defattr(-,root,root)
 %doc SRC/doc
-%doc TEST RedBook-Samples gle-examples nehe-examples LablGL
+%doc TEST TEST3 toolbox RedBook-Samples gle-examples nehe-examples LablGL
 %{_libdir}/ocaml/glMLite/*.a
 %{_libdir}/ocaml/glMLite/*.o
 %{_libdir}/ocaml/glMLite/*.cmx
