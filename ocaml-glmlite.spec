@@ -1,7 +1,7 @@
 Name:           ocaml-glmlite
 Version:        0.03.46
 Release:        %mkrel 2
-Summary:        OpenGL interface for Objective Caml
+Summary:        OpenGL bindings for OCaml
 License:        GPL
 Group:          Development/Other
 URL:            http://www.linux-nantes.org/~fmonnier/OCaml/GL/
@@ -23,7 +23,7 @@ BuildRequires:  libftgl-devel
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %package devel
-Summary:        OpenGL bindings for OCaml
+Summary:        Development files for %{name}
 Group:          Development/Other
 Requires:       %{name} = %{version}-%{release}
 
