@@ -1,6 +1,6 @@
 Name:           ocaml-glmlite
 Version:        0.03.50
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:        OpenGL bindings for OCaml
 License:        GPL
 Group:          Development/Other
@@ -12,8 +12,7 @@ Patch4:         glMLite-TEST3-dir-libpath.patch
 Patch2:         gle-examples-makefiles.patch
 Patch3:         glMLite-LablGL-libpath.patch
 BuildRequires:  ocaml
-BuildRequires:  X11-devel
-BuildRequires:  Mesa-common-devel
+BuildRequires:	mesaglut-devel
 BuildRequires:  libjpeg-devel
 BuildRequires:  libpng-devel
 BuildRequires:  librsvg-devel
@@ -50,7 +49,8 @@ Development files for the package %{name}.
 %patch4 -p0
 
 %build
-make everything
+%define _disable_ld_no_undefined 1
+make everything OCAMLMKLIB="ocamlmklib -ldopt '%ldflags'"
 make doc
 
 %install
