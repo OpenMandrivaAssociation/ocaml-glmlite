@@ -1,0 +1,39 @@
+diff -r -u LablGL_orig/Makefile LablGL/Makefile
+--- LablGL_orig/Makefile	2009-09-28 21:11:13.000000000 +0200
++++ LablGL/Makefile	2009-09-28 21:15:19.000000000 +0200
+@@ -11,21 +11,16 @@
+ glMLite_to_LablGL.sed.sh: LablGL_to_glMLite.ml  LablGL_to_glMLite.tab
+ 	ocaml $< -rev > $@
+ 
+-.PHONY: deps test clean
++.PHONY: test clean
+ 
+-deps-cma:
+-	(cd ../SRC/; $(MAKE) GL.cma Glu.cma Glut.cma)
+-deps-cmxa:
+-	(cd ../SRC/; $(MAKE) GL.cmx Glu.cmx Glut.cmx)
++test:
++	ocaml -I +glMLite GL.cma Glu.cma Glut.cma  LablGL.ml
+ 
+-test: cma-deps
+-	ocaml -I ../SRC/ GL.cma Glu.cma Glut.cma  LablGL.ml
++LablGL.cma: LablGL.ml
++	ocamlc -a -o $@ -I +glMLite  GL.cma  Glu.cma  Glut.cma  $<
+ 
+-LablGL.cma: LablGL.ml deps-cma
+-	ocamlc -a -o $@ -I ../SRC/  GL.cma  Glu.cma  Glut.cma  $<
+-
+-LablGL.cmxa: LablGL.ml deps-cmxa
+-	ocamlopt -a -o $@ -I ../SRC/  GL.cmx  Glu.cmx  Glut.cmx  $<
++LablGL.cmxa: LablGL.ml
++	ocamlopt -a -o $@ -I +glMLite  GL.cmx  Glu.cmx  Glut.cmx  $<
+ 
+ clean:
+ 	rm -f *.sed.sh *.[oa] *.cm[ioxa] *.cmxa
+diff -r -u LablGL_orig/test.sh LablGL/test.sh
+--- LablGL_orig/test.sh	2009-09-28 21:11:13.000000000 +0200
++++ LablGL/test.sh	2009-09-28 21:15:36.000000000 +0200
+@@ -1,2 +1,2 @@
+ make LablGL.cma
+-ocaml LablGL.cma -I ../SRC/ GL.cma Glu.cma Glut.cma  $1
++ocaml LablGL.cma -I +glMLite GL.cma Glu.cma Glut.cma  $1

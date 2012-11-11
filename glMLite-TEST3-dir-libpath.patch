@@ -1,0 +1,10 @@
+--- TEST3/Makefile.orig	2010-08-16 21:38:46.000000000 +0200
++++ TEST3/Makefile	2010-08-16 21:38:52.000000000 +0200
+@@ -1,5 +1,5 @@
+-GL_PATH := "../SRC/"
+-#GL_PATH := "+glMLite"
++#GL_PATH := "../SRC/"
++GL_PATH := "+glMLite"
+ 
+ all: ogl_draw.cmo ogl_matrix.cmo
+ 

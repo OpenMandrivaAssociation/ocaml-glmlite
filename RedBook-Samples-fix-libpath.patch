@@ -1,0 +1,42 @@
+diff -u -r RedBook-Samples_orig/Makefile RedBook-Samples/Makefile
+--- RedBook-Samples_orig/Makefile	2009-09-28 21:11:00.000000000 +0200
++++ RedBook-Samples/Makefile	2009-09-28 21:18:04.000000000 +0200
+@@ -1,4 +1,4 @@
+-include ../Makefile.depend
++OCAMLOPT=ocamlopt
+ 
+ VARR = varray.opt aapoly.opt
+ NOGLU = teaambient.opt
+@@ -10,16 +10,16 @@
+ all: $(STD) $(VARR) $(BA) $(NOGLU)
+ 
+ $(VARR): %.opt: %.ml
+-	$(OCAMLOPT) -I ../$(SRC) GL.cmxa Glu.cmxa Glut.cmxa bigarray.cmxa vertArray.cmxa $< -o $@
++	$(OCAMLOPT) -I +glMLite GL.cmxa Glu.cmxa Glut.cmxa bigarray.cmxa vertArray.cmxa $< -o $@
+ 
+ $(BA): %.opt: %.ml
+-	$(OCAMLOPT) -I ../$(SRC) GL.cmxa Glu.cmxa Glut.cmxa bigarray.cmxa $< -o $@
++	$(OCAMLOPT) -I +glMLite GL.cmxa Glu.cmxa Glut.cmxa bigarray.cmxa $< -o $@
+ 
+ $(STD): %.opt: %.ml
+-	$(OCAMLOPT) -I ../$(SRC) GL.cmxa Glu.cmxa Glut.cmxa $< -o $@
++	$(OCAMLOPT) -I +glMLite GL.cmxa Glu.cmxa Glut.cmxa $< -o $@
+ 
+ $(NOGLU): %.opt: %.ml
+-	$(OCAMLOPT) -I ../$(SRC) GL.cmxa Glut.cmxa $< -o $@
++	$(OCAMLOPT) -I +glMLite GL.cmxa Glut.cmxa $< -o $@
+ 
+ 
+ .PHONY: clean clean-build
+diff -u -r RedBook-Samples_orig/aapoly.sh RedBook-Samples/aapoly.sh
+--- RedBook-Samples_orig/aapoly.sh	2009-09-28 21:11:00.000000000 +0200
++++ RedBook-Samples/aapoly.sh	2009-09-28 21:18:15.000000000 +0200
+@@ -1 +1 @@
+-ocaml -I ../SRC/ GL.cma Glu.cma Glut.cma bigarray.cma vertArray.cma aapoly.ml
++ocaml -I +glMLite GL.cma Glu.cma Glut.cma bigarray.cma vertArray.cma aapoly.ml
+diff -u -r RedBook-Samples_orig/varray.sh RedBook-Samples/varray.sh
+--- RedBook-Samples_orig/varray.sh	2009-09-28 21:11:00.000000000 +0200
++++ RedBook-Samples/varray.sh	2009-09-28 21:18:24.000000000 +0200
+@@ -1 +1 @@
+-ocaml -I ../SRC/ GL.cma Glu.cma Glut.cma bigarray.cma vertArray.cma varray.ml
++ocaml -I +glMLite GL.cma Glu.cma Glut.cma bigarray.cma vertArray.cma varray.ml

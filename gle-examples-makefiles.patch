@@ -1,0 +1,24 @@
+diff -u -r gle-examples_orig/Makefile gle-examples/Makefile
+--- gle-examples_orig/Makefile	2009-09-28 21:11:51.000000000 +0200
++++ gle-examples/Makefile	2009-09-28 21:26:06.000000000 +0200
+@@ -2,10 +2,7 @@
+ all:
+ 	sh rundemo.sh
+ 
+-deps:
+-	(cd ..; $(MAKE) core gle_opt)
+-
+ clean:
+ 	rm -f *.opt *.o *.cm[iox] __* *~
+ 
+-.PHONY: all deps clean
++.PHONY: all clean
+diff -u -r gle-examples_orig/Makefile.demo gle-examples/Makefile.demo
+--- gle-examples_orig/Makefile.demo	2009-09-28 21:11:51.000000000 +0200
++++ gle-examples/Makefile.demo	2009-09-28 21:26:34.000000000 +0200
+@@ -1,4 +1,4 @@
+-GL_PATH := ../SRC/
++GL_PATH := +glMLite
+ 
+ MODULE := $(shell ocaml .capitalize.ml $(DEMO))
+ MAIN := mainsimple.ml
