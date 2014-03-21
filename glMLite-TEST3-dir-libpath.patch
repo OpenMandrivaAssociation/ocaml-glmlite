@@ -1,6 +1,8 @@
---- TEST3/Makefile.orig	2010-08-16 21:38:46.000000000 +0200
-+++ TEST3/Makefile	2010-08-16 21:38:52.000000000 +0200
-@@ -1,5 +1,5 @@
+--- TEST3/Makefile.orig	2012-03-03 21:27:42.584367668 +0100
++++ TEST3/Makefile	2012-03-03 21:27:52.956367963 +0100
+@@ -1,7 +1,7 @@
+ include ../Makefile.depend
+ 
 -GL_PATH := "../SRC/"
 -#GL_PATH := "+glMLite"
 +#GL_PATH := "../SRC/"

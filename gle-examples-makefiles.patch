@@ -1,6 +1,6 @@
-diff -u -r gle-examples_orig/Makefile gle-examples/Makefile
---- gle-examples_orig/Makefile	2009-09-28 21:11:51.000000000 +0200
-+++ gle-examples/Makefile	2009-09-28 21:26:06.000000000 +0200
+diff -Naur gle-examples_orig/Makefile gle-examples/Makefile
+--- gle-examples_orig/Makefile	2012-03-03 21:22:30.518367750 +0100
++++ gle-examples/Makefile	2012-03-03 21:23:03.925368031 +0100
 @@ -2,10 +2,7 @@
  all:
  	sh rundemo.sh
@@ -13,12 +13,14 @@ diff -u -r gle-examples_orig/Makefile gle-examples/Makefile
  
 -.PHONY: all deps clean
 +.PHONY: all clean
-diff -u -r gle-examples_orig/Makefile.demo gle-examples/Makefile.demo
---- gle-examples_orig/Makefile.demo	2009-09-28 21:11:51.000000000 +0200
-+++ gle-examples/Makefile.demo	2009-09-28 21:26:34.000000000 +0200
-@@ -1,4 +1,4 @@
+diff -Naur gle-examples_orig/Makefile.demo gle-examples/Makefile.demo
+--- gle-examples_orig/Makefile.demo	2012-03-03 21:22:30.518367750 +0100
++++ gle-examples/Makefile.demo	2012-03-03 21:23:35.803284191 +0100
+@@ -1,6 +1,6 @@
+ include ../Makefile.depend
+ 
 -GL_PATH := ../SRC/
 +GL_PATH := +glMLite
  
- MODULE := $(shell ocaml .capitalize.ml $(DEMO))
+ MODULE := $(shell $(OCAML) .capitalize.ml $(DEMO))
  MAIN := mainsimple.ml
