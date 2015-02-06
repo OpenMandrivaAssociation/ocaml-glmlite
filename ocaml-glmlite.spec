@@ -1,7 +1,7 @@
 Summary:	OpenGL bindings for OCaml
 Name:		ocaml-glmlite
 Version:	0.03.51
-Release:	1
+Release:	2
 License:	LGPLv3+ or MIT
 Group:		Development/Other
 Url:		http://www.linux-nantes.org/~fmonnier/OCaml/GL/
