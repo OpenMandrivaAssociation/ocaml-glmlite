@@ -4,7 +4,7 @@ Version:	0.03.51
 Release:	2
 License:	LGPLv3+ or MIT
 Group:		Development/Other
-Url:		http://www.linux-nantes.org/~fmonnier/OCaml/GL/
+Url:		https://www.linux-nantes.org/~fmonnier/OCaml/GL/
 Source0:	http://www.linux-nantes.org/~fmonnier/OCaml/GL/download/glMLite-%{version}.tgz
 Patch0:		RedBook-Samples-fix-libpath.patch
 Patch1:		glMLite-TEST-dir-libpath.patch
